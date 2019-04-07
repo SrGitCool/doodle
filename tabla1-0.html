@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+    body{font-family:'Gill Sans','Gill Sans MT',Calibri,'Trebuchet MS',sans-serif;
+    }
+    .table-container{flex-direction:column; display:flex; width:420px; margin:auto;
+    }
+    .tabla{border:black solid 1px; border-collapse:collapse;
+    }
+    .realcone{width:40px;
+    }
+    .realc{width:60px;
+    }
+    .hd th, .Ut{background:rgb(143, 140, 140); color:white;
+    }
+    .simbol{padding-right:10px;
+    }
+    input, tr td form{text-align:right; width:70px; border:none;
+    }
+    tr td form #numespe{width:80px;
+    }
+    .name{text-align:center; margin:auto; font-weight:bold;
+    }
+    .text1, .text2{margin:auto; font-size:10px;
+    }
+    .text1, .text2{text-align:justify; width:460px;
+    }
+    .text1{text-align:center; width:360px; font-style:italic;
+    }
+    tr td div{text-align:right;
+    }
+    .bold, tr td div{font-size:15px;
+    }
+    .simbol1, .bold, .Ut, .important{font-weight:bold;
+    }
+    </style>
+    <script>function calcula1(valor) {
+        if (valor.indexOf('%')!=-1) {
+            porcen = valor.substring(0,valor.length-1);
+            tot = document.forms[0].numero.value * porcen / 100;
+            document.getElementById("total0").innerHTML = formatNumber.new(tot);
+        }
+    }function calcula2(valor) {
+        if (valor.indexOf('%')!=-1) {
+            porcen = valor.substring(0,valor.length-1);
+            tot = document.forms[0].numero.value * porcen / 100;
+            document.getElementById("total1").innerHTML = formatNumber.new(tot);
+        }
+    }function calcula3(valor) {
+        if (valor.indexOf('%')!=-1) {
+            porcen = valor.substring(0,valor.length-1);
+            tot = document.forms[0].numero.value * porcen / 100;
+            document.getElementById("total2").innerHTML = formatNumber.new(tot);
+        }
+    }function calcula4(valor) {
+        if (valor.indexOf('%')!=-1) {
+            porcen = valor.substring(0,valor.length-1);
+            tot = document.forms[0].numero.value * porcen / 100;
+            document.getElementById("total3").innerHTML = formatNumber.new(tot);
+        }
+    }function calcula5(valor) {
+        if (valor.indexOf('%')!=-1) {
+            porcen = valor.substring(0,valor.length-1);
+            tot = document.forms[0].numero.value * porcen / 100;
+            document.getElementById("total4").innerHTML = formatNumber.new(tot);
+        }
+    }function calcula6(valor) {
+        if (valor.indexOf('%')!=-1) {
+            porcen = valor.substring(0,valor.length-1);
+            tot = document.forms[0].numero.value * porcen / 100;
+            document.getElementById("total5").innerHTML = formatNumber.new(tot);
+        }
+    }function calcula7(valor) {
+        if (valor.indexOf('%')!=-1) {
+            porcen = valor.substring(0,valor.length-1);
+            tot = document.forms[0].numero.value * porcen / 100;
+            document.getElementById("total6").innerHTML = formatNumber.new(tot);
+        }
+    }function calcula8(valor) {
+        if (valor.indexOf('%')!=-1) {
+            porcen = valor.substring(0,valor.length-1);
+            tot = document.forms[0].numero.value * porcen / 100;
+            document.getElementById("total7").innerHTML = formatNumber.new(tot);
+        }
+    }function calcula9(valor) {
+        if (valor.indexOf('%')!=-1) {
+            porcen = valor.substring(0,valor.length-1);
+            tot = document.forms[0].numero.value * porcen / 100;
+            document.getElementById("total8").innerHTML = formatNumber.new(tot);
+        }
+    }
+    var formatNumber = {
+        separador: ",", // separador para los miles
+        sepDecimal: '.', // separador para los decimales
+        formatear:function (num){
+        num +='';
+        var splitStr = num.split('.');
+        var splitLeft = splitStr[0];
+        var splitRight = splitStr.length > 1 ? this.sepDecimal + splitStr[1] : '';
+        var regx = /(\d+)(\d{3})/;
+        while (regx.test(splitLeft)) {
+        splitLeft = splitLeft.replace(regx, '$1' + this.separador + '$2');
+        }
+        return this.simbol + splitLeft +splitRight;
+        },
+        new:function(num, simbol){
+        this.simbol = simbol ||'';
+        return this.formatear(num);
+        }
+       }
+    function rlNewOperation(){
+        var datoNumero = document.forms[0].numero.value;
+        var dato1 = document.getElementById("valore1").value;
+        var dato2 = document.getElementById("valore2").value;
+        var dato3 = document.getElementById("valore3").value;
+        var dato4 = document.getElementById("valore4").value;
+        var dato5 = document.getElementById("valore5").value;
+        var dato6 = document.getElementById("valore6").value;
+        var dato7 = document.getElementById("valore7").value;
+        var dato8 = document.getElementById("valore8").value;
+        var dato9 = document.getElementById("valore9").value;
+        if(datoNumero <= 900000 || datoNumero > 900000){
+            calcula1(dato1)
+            calcula2(dato2)
+            calcula3(dato3)
+            calcula4(dato4)
+            calcula5(dato5)
+            calcula6(dato6)
+            calcula7(dato7)
+            calcula8(dato8)
+            calcula9(dato9)
+        }
+    }
+    </script>
+    <title>JMT</title>
+</head>
+<body>
+    <div class="name">Restaurant Titanic S.A</div>
+    <div class="table-container">
+        <table class="tabla">
+            <tr class="hd">
+                <th>Concepto</th>
+                <th class="realcone" colspan="2">Importe</th>
+                <th class="realc">%</th>
+            </tr>
+            <tr>
+                <td class="important">Ventas</td>
+                <td class="simbol1">$</td>
+                <td><form><input id="numespe" onblur="rlNewOperation()" class="bold" type="text" name="numero" value="900000"></form></td>
+                <td><form><input class="bold" type="text"  value="100%"></form></td>
+            </tr>
+            <tr>
+                <td class="important">Costo A y B</td>
+                <td  class="simbol">$</td>
+                <td><div id="total0">270,000</div></td>
+                <td><form><input id="valore1" type="text" onblur="calcula1(this.value)" value="30.0%"></form></td>
+            </tr>
+            <tr>
+                <td class="Ut">Utilidad bruta</td>
+                <td class="simbol">$</td>
+                <td><div id="total1">630,000</div></td>
+                <td><form><input id="valore2" type="text" onblur="calcula2(this.value)" value="70.0%"></form></td>
+            </tr>
+            <tr>
+                <td class="important">Gastos de nomina</td>
+                <td class="simbol">$</td>
+                <td><div id="total2">216,000</div></td>
+                <td><form><input id="valore3" type="text" onblur="calcula3(this.value)" value="24.0%"></form></td>
+            </tr>
+            <tr>
+                <td class="important">Gastos indirectos</td>
+                <td class="simbol">$</td>
+                <td><div id="total3">81,000</div></td>
+                <td><form><input id="valore4" type="text" onblur="calcula4(this.value)" value="9.0%"></form</td>
+            </tr>
+            <tr>
+                <td class="important">Gastos fijos</td>
+                <td class="simbol">$</td>
+                <td><div id="total4">126,000</div></td>
+                <td><form><input id="valore5" type="text" onblur="calcula5(this.value)" value="14.0%"></form></td>
+            </tr>
+            <tr>
+                <td class="important">Total de gastos</td>
+                <td class="simbol">$</td>
+                <td><div id="total5">423,000</div></td>
+                <td><form><input id="valore6" type="text" onblur="calcula6(this.value)" value="47.0%"></form></td>
+            </tr>
+            <tr>
+                <td class="Ut">Utilidad de operación</td>
+                <td class="simbol">$</td>
+                <td><div id="total6">207,000</div></td>
+                <td><form><input id="valore7" type="text" onblur="calcula7(this.value)" value="23.0%"></form></td>
+            </tr>
+            <tr>
+                <td class="important">Gastos de administración</td>
+                <td class="simbol">$</td>
+                <td><div id="total7">540,000</div></td>
+                <td><form><input id="valore8" type="text" onblur="calcula8(this.value)" value="60.0%"></form></td>
+            </tr>
+            <tr>
+                <td class="Ut">Utilidad antes de impuestos</td>
+                <td class="simbol">$</td>
+                <td><div id="total8">153,000</div></td>
+                <td><form><input id="valore9" type="text" onblur="calcula9(this.value)" value="17.0%"></form></td>
+            </tr>
+        </table>
+    </div>
+    <div class="text1">para obtener el importe en pesos de cada gasto, multiplique el porcentaje de cada gasto por las ventas, oprimiendo la tecla % en lugar de la tecla =</div>
+    <div class="text2">Compare la utilidad de cada negocio y anote sus observaciones, posiblemente el instructor cuestionará sobre ellas.</div>
+</body>
+</html>
